@@ -5,6 +5,14 @@ export EDITOR='vim'
 export LC_ALL='ja_JP.UTF-8'
 export LANG='ja_JP.UTF-8'
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# 自作コマンド
+export PATH="~/Documents/github/dotfiles/bin:$PATH"
+
 
 ###################
 # settings
@@ -52,9 +60,3 @@ alias g-pull='git checkout master && git pull origin master'
 alias g-push='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias g-add='git add .'
 alias g-status='git status'
-
-
-###################
-# 自作コマンド
-###################
-export PATH=$PATH:~/Documents/github/dotfiles/bin
