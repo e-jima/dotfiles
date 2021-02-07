@@ -57,3 +57,4 @@ alias g-status='git status'
 ###################
 # 自作コマンド
 ###################
+export PATH=$PATH:~/Documents/github/dotfiles/bin

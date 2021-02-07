@@ -1,0 +1,9 @@
+#!/usr/local/bin/zsh
+
+# git commit -m "hoge" する
+# TODO: ';' '>' などの shell 特殊文字も使えるようにする
+for v in "$@"; do
+    concat="$concat $v"
+done
+concat=`echo $concat | sed 's/^ //'`
+git commit -m "$concat"
