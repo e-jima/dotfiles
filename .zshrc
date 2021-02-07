@@ -4,6 +4,8 @@
 export EDITOR='vim'
 export LC_ALL='ja_JP.UTF-8'
 export LANG='ja_JP.UTF-8'
+export HISTSIZE=1000
+export SAVEHIST=100000
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -26,6 +28,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload -U compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# 重複した履歴を保存しない
+setopt hist_ignore_dups
+# 履歴の開始と終了を記録
+setopt EXTENDED_HISTORY
 
 # 色
 autoload -Uz colors
@@ -60,3 +67,4 @@ alias g-pull='git checkout master && git pull origin master'
 alias g-push='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias g-add='git add .'
 alias g-status='git status'
+alias rsz='echo resource ~/.zshenv.... && source ~/.zshenv && echo complete!'
