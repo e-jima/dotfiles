@@ -10,10 +10,13 @@ export SAVEHIST=100000
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 # 自作コマンド
-export PATH="~/Documents/github/dotfiles/bin:$PATH"
+export PATH="$HOME/github/dotfiles/bin:$PATH"
 
 
 ###################
@@ -41,6 +44,9 @@ colors
 # terminal で効かなくなった crtl を治す
 bindkey -e
 
+# asterisk の挙動を修正
+unsetopt nomatch
+
 
 ###################
 # prompt
@@ -67,4 +73,3 @@ alias g-pull='git checkout master && git pull origin master'
 alias g-push='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias g-add='git add .'
 alias g-status='git status'
-alias rsz='echo resource ~/.zshenv.... && source ~/.zshenv && echo complete!'
