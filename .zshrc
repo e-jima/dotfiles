@@ -72,11 +72,6 @@ fpath=(
 ###################
 alias ls='ls -FG'
 alias ll='ls -alFG'
-alias g-pull='git checkout master && git pull origin master'
-alias g-push='git push origin `git rev-parse --abbrev-ref HEAD`'
-alias g-add='git add .'
-alias g-status='git status'
-
 
 ###################
 # python

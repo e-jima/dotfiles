@@ -1,0 +1,2 @@
+#!/bin/zsh
+go run $ZDOTDIR/go/git-alias.go add "$@"
