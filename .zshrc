@@ -1,5 +1,19 @@
 ###################
-# export
+# brew
+###################
+# for Apple silicon Mac
+if [ -e "/opt/homebrew/bin/brew" ]; then
+    brew_path="/opt/homebrew/bin/brew"
+    eval "$($brew_path shellenv)"
+fi
+# for Intel Mac
+if [ -e "/usr/local/bin/brew" ]; then
+    brew_path="/usr/local/bin/brew"
+    eval "$($brew_path shellenv)"
+fi
+
+###################
+# settings
 ###################
 export EDITOR='vim'
 export LC_ALL='ja_JP.UTF-8'
@@ -7,16 +21,10 @@ export LANG='ja_JP.UTF-8'
 export HISTSIZE=1000
 export SAVEHIST=100000
 # 自作コマンドへの path を通す
-export PATH="$ZDOTDIR/bin:$PATH"
-
-###################
-# settings
-###################
-# brew path
-eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$ZDOTDIR/bin:$ZSECRETDOTDIR/bin:$PATH"
 
 # syntax highlight
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$(brew --prefix)/share/zsh-syntax-highlighting/highlighters
 
 # 大文字小文字の区別をなくす
 autoload -Uz compinit

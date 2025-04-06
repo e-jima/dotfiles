@@ -6,7 +6,7 @@ This repository contains scripts to set up macOS.
 ## Required
 macOS
 
-## Install
+## Setup
 0. Set up your path to clone this repository if you want.
 ```shell
 REPO_ROOT=</path/you/want/to/clone>
