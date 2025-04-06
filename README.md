@@ -14,7 +14,7 @@ REPO_ROOT=</path/you/want/to/clone>
 
 1. Set up `zsh` configuration.
 ```shell
-/bin/sh -c 'echo "export ZDOTDIR=${REPO_ROOT:-$HOME}\n" >> ~/.zprofile' 
+/bin/sh -c 'echo "export ZDOTDIR=${REPO_ROOT:-$HOME}/dotfiles\n" >> ~/.zprofile' 
 ```
 
 2. Build macOS from Makefile 

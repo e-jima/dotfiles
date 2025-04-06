@@ -1,1 +1,1 @@
-brew bundle dump --file $ZDOTDIR/brew/.Brewfile --force 
+brew bundle dump --file $ZDOTDIR/brew/.Brewfile --force
