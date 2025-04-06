@@ -6,13 +6,8 @@ export LC_ALL='ja_JP.UTF-8'
 export LANG='ja_JP.UTF-8'
 export HISTSIZE=1000
 export SAVEHIST=100000
-
-# brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # 自作コマンドへの path を通す
 export PATH="$ZDOTDIR/bin:$PATH"
-
 # zlib
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
@@ -55,7 +50,7 @@ unsetopt nomatch
 # prompt
 ###################
 setopt PROMPT_SUBST
-export PS1='%F{009}Lilja%f %F{006}%~%f %F{216}% $(get_git_branch) %f
+export PS1='%F{006}%~%f %F{216}% $(get_git_branch) %f
 $ '
 
 
@@ -86,7 +81,13 @@ alias g-status='git status'
 ###################
 # python
 ###################
-# uv
+# Activate the global uv virtual environment
+if [[ -d "$HOME/.venv" ]]; then
+    source "$HOME/.venv/bin/activate"
+else
+    echo "No virtual environment found in .venv or ~/.venv"
+fi
+
 # uv run コマンド用の補完設定
 _uv_run_completions() {
   # 最初の引数がディレクトリならば、ディレクトリの候補を表示
