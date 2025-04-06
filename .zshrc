@@ -8,10 +8,6 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 # 自作コマンドへの path を通す
 export PATH="$ZDOTDIR/bin:$PATH"
-# zlib
-export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
-export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
 ###################
 # settings
