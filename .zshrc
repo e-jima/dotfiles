@@ -44,6 +44,10 @@ colors
 # terminal で効かなくなった crtl を治す
 bindkey -e
 
+# alt + 矢印を動作させる(VSCode)
+bindkey '^[[1;2D' backward-word
+bindkey '^[[1;2C' forward-word
+
 # asterisk の挙動を修正
 unsetopt nomatch
 
