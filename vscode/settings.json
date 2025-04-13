@@ -1,0 +1,9 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.renderWhitespace": "all",
+    "window.newWindowProfile": "Default",
+    "files.associations": {
+        "*.ddl": "sql"
+    }
+}
