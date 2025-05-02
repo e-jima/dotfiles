@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# .heic 拡張子の画像を .jpg に変換する
+# 10並列で実行する
+# 変換前の heic ファイルは削除する
+
+find . -maxdepth 1 -type f \( -iname "*.heic" \) | \
+    xargs -I{} -P 10 sh -c 'sips -s format jpeg "$1" --out "${1%.*}.jpg" && rm "$1"' _ {}
